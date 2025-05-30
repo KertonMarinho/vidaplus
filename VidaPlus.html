@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidaPlus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--icone de pesquisa-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-top-bar">
+            <a href="#" class="admin-link">administração</a>
+            <div class="search-container">
+                <input type="text" placeholder="O que você procura?">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <!-- Add other top-right icons if needed -->
+        </div>
+        <div class="header-content">
+            <div class="logo">VidaPlus</div>
+            <nav class="user-type-nav">
+                <ul>
+                    <li><a href="#" class="active">PACIENTE</a></li>
+                    <li><a href="#">MÉDICO</a></li>
+                    <li><a href="#">TÉCNICO/ENFERM.</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <section class="find-clinic">
+                    <h2>ENCONTRE O CENTRO MÉDICO MAIS PRÓXIMO</h2>
+                     <select name="state" id="state">
+                        <option value="">Selecione o estado</option>
+                        <!-- Add states here -->
+                    </select>
+                    <select name="city" id="city">
+                        <option value="">Selecione a cidade</option>
+                        <!-- Add cities here -->
+                    </select>
+                   
+                    <button class="search-clinic-btn">Buscar centro médico</button>
+                </section>
+                <section class="webchat">
+                    <h3>Webchat</h3>
+                    <button class="chat-btn">Pergunte alguma coisa?</button>
+                </section>
+            </aside>
+
+            <section class="specialties">
+                <div class="specialty-card">MEDICINA FAMILIAR</div>
+                <div class="specialty-card">DERMATOLOGISTA</div>
+                <div class="specialty-card">NEUROLOGISTA</div>
+                <div class="specialty-card">OFTAMOLOGISTA</div>
+                <div class="specialty-card">CARDIOLOGISTA</div>
+                <div class="specialty-card">PEDIATRA</div>
+                <div class="specialty-card">GINECOLOGISTA</div>
+                <div class="specialty-card">ORTOPEDIA</div>
+                <div class="specialty-card">PSIQUIATRA</div>
+                <div class="specialty-card">UROLOGISTA</div>
+                <div class="specialty-card">ONCOLOGIA CLÍNICA</div>
+                <div class="specialty-card">ENDOSCOPIA</div>
+            </section>
+        </div>
+
+        <section class="how-it-works">
+            <h2>Como Funciona?</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="date-tag">Passo 1</div>
+                    <div class="icon-placeholder"><i class="fas fa-user-md fa-2x"></i></div>
+                    <h3>Escolha consulta</h3>
+                    <p>Selecione a especialidade, atestado ou prescrição.</p>
+                </div>
+                <div class="step-card">
+                    <div class="date-tag">Passo 2</div>
+                    <div class="icon-placeholder"><i class="far fa-calendar-alt fa-2x"></i></div>
+                    <h3>Agenda consulta</h3>
+                    <p>Marque à hora e dia.</p>
+                </div>
+                <div class="step-card">
+                    <div class="date-tag">passo 3</div>
+                    <div class="icon-placeholder"><i class="far fa-credit-card fa-2x"></i></div>
+                    <h3>Efetua pagamento</h3>
+                    <p>Cartão de crédito<br>Cartão de débito<br>Pix<br>Boleto</p>
+                </div>
+                <div class="step-card">
+                    <div class="date-tag">Passo 4</div>
+                    <div class="icon-placeholder"><i class="fas fa-mobile-alt fa-2x"></i></div>
+                    <h3>Consulta médica</h3>
+                    <p>Consulte online através do smatphone,tablet ou computador</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">VidaPlus</div>
+                <p>A VidaPlus esta empenhada em garantir um acesso fácil e de qualidade a serviço de saúde</p>
+            </div>
+            <div class="footer-info">
+                <h3>Informações</h3>
+                <ul>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Termos</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                    <li><a href="#">Política de Não Discriminação</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Siga-nos!</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/kerton-marinho-776aba208?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Br41wR1ZuQpeNPed5%2FY5reQ%3D%3D"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/KertonMarinho"><i class="fab fa-github"></i></a>
+                </div>
+                <button class="contact-btn">FALE CONOSCO</button>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
