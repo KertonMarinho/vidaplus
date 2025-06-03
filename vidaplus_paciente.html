@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcação de Consulta</title>
+    <link rel="stylesheet" href="css/style_paciente.css">
+    
+   
+</head>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <div class="profile-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
+                </div>
+                <h2>PACIENTE</h2>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="active"><a href="#">MARCA CONSULTA</a></li>
+                    <li><a href="#">SUAS RECEITAS</a></li>
+                    <li><a href="#">LEMBRETES MEDICAÇÃO</a></li>
+                    <li><a href="#">ATENDIMENTO ONLINE</a></li>
+                    <li><a href="#">RESULTADO DE EXAME</a></li>
+                    <li><a href="#">EXAMES MARCADOS</a></li>
+                    <li><a href="#">CHAT</a></li>
+                </ul>
+            </nav>
+            <div class="exit-button">
+                <button><span>SAIR</span> X</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="top-appointment-area">
+                <div class="time-selector-wrapper">
+                    <h3 class="section-title">SELECIONA HORA</h3>
+                    <div class="time-selector-content"> <div class="time-picker">
+                            <div class="column">
+                                <span class="time-unit">06</span>
+                                <span class="time-unit">07</span>
+                                <span class="time-unit highlighted">08</span>
+                                <span class="time-unit">09</span>
+                                <span class="time-unit">10</span>
+                                <span class="time-unit">11</span>
+                            </div>
+                            <div class="separator">:</div>
+                            <div class="column">
+                                <span class="time-unit">57</span>
+                                <span class="time-unit">58</span>
+                                <span class="time-unit">59</span>
+                                <span class="time-unit highlighted">00</span>
+                                <span class="time-unit">01</span>
+                                <span class="time-unit">02</span>
+                                <span class="time-unit">03</span>
+                            </div>
+                            <div class="column">
+                                <span class="time-unit">AM</span>
+                                <span class="time-unit highlighted">PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-wrapper">
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <div class="date-display">
+                                <h4>Select date</h4>
+                                <p>Mon, Aug 17</p>
+                            </div>
+                            <div class="month-year">August 2025</div>
+                            <div class="calendar-nav">
+                                <button>&lt;</button>
+                                <button>&gt;</button>
+                            </div>
+                             <button class="edit-icon" aria-label="Edit date">&#9998;</button>
+                        </div>
+                        <div class="calendar-grid">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="disabled"></td><td class="disabled"></td><td class="disabled"></td><td class="disabled"></td>
+                                        <td>1</td><td>2</td><td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td><td class="today">5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td class="selected">17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+                                    </tr>
+                                    <tr>
+                                        <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="calendar-actions">
+                            <button>Close</button>
+                            <button>Cancel</button>
+                            <button>Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-selection-container">
+                <h3 class="section-title">SELECIONA MÉDICO:</h3>
+                <div class="doctor-buttons">
+                    <button>CLÍNICO GERAL</button>
+                    <button>DERMATOLOGISTA</button>
+                    <button>GINECOLOGISTA</button>
+                    <button>ENDOSCOPIA</button>
+                    <button>CARDIOLOGISTA</button>
+                    <button>PEDIATRA</button>
+                    <button>ORTOPEDIA</button>
+                    <button>OFTAMOLOGISTA</button>
+                    <button>PSIQUIATRA</button>
+                    <button>UROLOGISTA</button>
+                    <button>ONCOLOGIA</button>
+                    <button>NEUROLOGISTA</button>
+                </div>
+            </div>
+
+            <div class="main-action-button">
+                <button>AVANÇAR</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

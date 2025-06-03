@@ -23,9 +23,9 @@ ul {
 header {
     background-image: url('image/raphael-ai.jpeg'); /* Replace with your actual hero image URL */
   
-    background-position: center 30%; /* Adjust to focus on the person's face */
+    background-position: center 12%; /* Adjust to focus on the person's face */
     color: white;
-    padding-bottom: 200px; /* Space for nav below hero image part */
+    padding-bottom: 400px; /* Space for nav below hero image part */
     position: relative; /* For pseudo-element overlay */
 }
 
@@ -41,7 +41,8 @@ header::before { /* Dark overlay for better text readability */
 }
 
 
-.header-top-bar, .header-content, .logo, .user-type-nav, .search-container {
+
+.header-top-bar, .header-content, .search-container {
     position: relative; /* To be above the overlay */
     z-index: 2;
 }
@@ -56,7 +57,8 @@ header::before { /* Dark overlay for better text readability */
 }
 
 .admin-link {
-    
+    position: relative;
+    left: 980px;
     color: #ccc;
 }
 .admin-link:hover {
@@ -91,18 +93,25 @@ header::before { /* Dark overlay for better text readability */
 }
 
 .logo {
-    font-size: 6.8em;
+    position: absolute;
+    bottom: -203px;
+    font-size: 10em;
     font-weight: bold;
     font-family: island moments;
-    margin-top: -10px;
+    margin-left: -30px;
     margin-bottom: 50hexpx; /* Space between logo and nav */
     /* Add specific font if available */
     color: rgb(138, 33, 132); /* Brighter white for logo */
     text-shadow: 1px 1px 2px rgba(236, 231, 231, 0.5);
+     z-index:2;
 }
 
 .user-type-nav ul {
     display: inline-flex;
+      position: absolute;
+    bottom: 36px;
+    margin-left: 50px;
+    z-index:2;
 }
     
     

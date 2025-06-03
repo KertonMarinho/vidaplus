@@ -1,0 +1,473 @@
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            display: flex;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px; /* Adjusted max-width */
+            margin: auto; /* Center the container */
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            height: auto; /* Fit content */
+            min-height: 700px; /* Minimum height based on image */
+        }
+
+        .sidebar {
+            width: 260px;
+            background-color: #2D8C8C; /* Dark teal */
+            padding: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #B0B0B0; /* Placeholder color for icon background */
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px; /* For a potential icon font */
+            color: #fff;
+        }
+
+         .profile-icon svg { /* Simple user icon */
+            width: 50px;
+            height: 50px;
+            fill: #FFFFFF;
+        }
+
+
+        .profile h2 {
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #E0E0E0;
+            color: #333;
+            padding: 10px 0;
+            border-radius: 5px;
+            margin: 0;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #4A9A9A; /* Lighter teal for separator */
+        }
+        .menu ul li:first-child {
+             border-top: 1px solid #4A9A9A;
+        }
+
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            padding: 8px 5px;
+        }
+        .menu ul li.active a, .menu ul li a:hover {
+            background-color: #1F6666; /* Darker teal for hover/active */
+            border-radius: 4px;
+        }
+
+
+        .exit-button {
+            margin-top: auto; /* Pushes to the bottom */
+        }
+
+        .exit-button button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .exit-button button:hover {
+            background-color: #444;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 25px 35px; /* Increased padding */
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Space between sections */
+        }
+
+        .appointment-sections {
+            display: flex;
+            gap: 30px; /* Gap between time/calendar and doctor selection */
+        }
+
+        .time-calendar-section {
+            flex: 1.2; /* Takes more space */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+
+        .section-title {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .time-selector-container {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 200px; /* Fixed width for time selector */
+        }
+
+        .time-picker {
+            display: flex;
+            justify-content: space-around; /* Distributes space between hour, min, am/pm */
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            height: 120px; /* Approximate height */
+        }
+
+        .time-picker > div {
+            text-align: center;
+        }
+
+        .time-picker .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%; /* Fill height */
+            justify-content: center; /* Center items vertically */
+        }
+
+        .time-picker .time-unit {
+            padding: 5px 8px;
+            cursor: pointer;
+            color: #aaa;
+            font-size: 16px;
+        }
+        .time-picker .time-unit.selected, .time-picker .time-unit:hover {
+            color: #333;
+            font-weight: bold;
+        }
+        .time-picker .time-unit.highlighted {
+            background-color: #007bff; /* Blue highlight */
+            color: white;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size:18px;
+        }
+        .time-picker .separator {
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+            align-self: center;
+            padding-bottom: 2px; /* Align with highlighted numbers */
+        }
+
+
+        .calendar-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex-grow: 1; /* Allows calendar to take available space */
+            min-width: 320px; /* Minimum width for calendar */
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .calendar-header .date-display {
+            flex-grow: 1;
+        }
+        .calendar-header .date-display h4 {
+            font-size: 14px;
+            color: #555;
+            margin: 0 0 2px 0;
+        }
+        .calendar-header .date-display p {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+         .calendar-header .month-year {
+            font-size: 14px;
+            color: #555;
+            text-align: center; /* Center August 2025 */
+            flex-grow: 1;
+         }
+
+        .calendar-nav button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #555;
+            padding: 5px;
+        }
+         .calendar-header .edit-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px; /* Adjust as needed */
+            color: #555;
+        }
+
+
+        .calendar-grid table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .calendar-grid th, .calendar-grid td {
+            padding: 8px;
+            font-size: 13px;
+        }
+
+        .calendar-grid th {
+            color: #888;
+            font-weight: normal;
+        }
+
+        .calendar-grid td {
+            cursor: pointer;
+            border-radius: 50%;
+            width: 32px; /* Fixed width */
+            height: 32px; /* Fixed height */
+            line-height: 1; /* Adjust line height for vertical centering */
+        }
+
+        .calendar-grid td:hover {
+            background-color: #e9ecef;
+        }
+
+        .calendar-grid td.today {
+            background-color: #E0EAFC; /* Light blue for today */
+            color: #007bff; /* Blue text */
+            border-radius: 50%;
+        }
+        .calendar-grid td.disabled {
+            color: #ccc;
+            cursor: default;
+        }
+        .calendar-grid td.selected {
+            background-color: #007bff; /* Blue background */
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+
+        .calendar-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .calendar-actions button {
+            background: none;
+            border: none;
+            color: #007bff;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        .calendar-actions button:hover {
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+
+
+        .doctor-selection-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .doctor-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Responsive grid */
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .doctor-buttons button {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 12px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            color: #333;
+            text-align: center;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .doctor-buttons button:hover {
+            background-color: #e0e0e0;
+            border-color: #ccc;
+        }
+        .doctor-buttons button.selected {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .main-action-button {
+            align-self: flex-end; /* Aligns button to the right of the main content area */
+            margin-top: 20px; /* Space above the button */
+        }
+
+        .main-action-button button {
+            background-color: #28a745; /* Green color */
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .main-action-button button:hover {
+            background-color: #218838; /* Darker green */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1100px) { /* Increased breakpoint for better layout */
+            .appointment-sections {
+                flex-direction: column;
+            }
+            .time-selector-container {
+                width: auto; /* Full width in smaller screens */
+            }
+            .main-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                flex-direction: row; /* Horizontal layout for sidebar items */
+                align-items: center;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .profile {
+                margin-bottom: 0;
+                margin-right: 20px;
+                display: flex; /* Align icon and text */
+                align-items: center;
+            }
+            .profile-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                margin-right: 10px; /* Space between icon and PACIENTE */
+                margin-bottom: 0;
+            }
+             .profile-icon svg {
+                width: 25px;
+                height: 25px;
+            }
+            .profile h2 {
+                font-size: 16px;
+                padding: 8px 10px;
+            }
+            .menu {
+                flex-grow: 1; /* Menu takes available space */
+                overflow-x: auto; /* Allow horizontal scrolling for menu items if they overflow */
+            }
+            .menu ul {
+                display: flex; /* Horizontal menu items */
+                flex-wrap: nowrap; /* Prevent wrapping */
+            }
+            .menu ul li {
+                border-bottom: none; /* Remove bottom border */
+                border-right: 1px solid #4A9A9A; /* Add right border */
+                padding: 0;
+            }
+            .menu ul li:first-child {
+                border-top: none;
+            }
+            .menu ul li:last-child {
+                border-right: none;
+            }
+            .menu ul li a {
+                padding: 10px 8px;
+                font-size: 12px;
+                white-space: nowrap; /* Prevent link text from wrapping */
+            }
+            .exit-button {
+                margin-top: 0;
+                margin-left: 10px; /* Space from menu */
+            }
+            .exit-button button {
+                width: auto;
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+             .exit-button button span { display: none; } /* Hide "SAIR" text, show only X */
+            .main-action-button {
+                align-self: center;
+                width: 100%;
+                margin-top: 20px;
+            }
+            .main-action-button button {
+                width: 100%;
+            }
+             .doctor-buttons {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+
+    </style>
