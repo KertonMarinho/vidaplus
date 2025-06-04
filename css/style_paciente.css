@@ -1,9 +1,9 @@
- <style>
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5;
+            background-color: rgba(85,156, 160, 100);
             display: flex;
             height: 100vh;
             color: #333;
@@ -22,7 +22,7 @@
 
         .sidebar {
             width: 260px;
-            background-color: #2D8C8C; /* Dark teal */
+            background-color: rgb(0, 121, 107); /* Dark teal */
             padding: 20px;
             color: white;
             display: flex;
@@ -87,7 +87,7 @@
             padding: 8px 5px;
         }
         .menu ul li.active a, .menu ul li a:hover {
-            background-color: #1F6666; /* Darker teal for hover/active */
+            background-color: rgb(31, 102, 102,0.89); /* Darker teal for hover/active */
             border-radius: 4px;
         }
 
@@ -117,6 +117,7 @@
         .main-content {
             flex-grow: 1;
             padding: 25px 35px; /* Increased padding */
+            background-color: #bdcfc2e7;
             display: flex;
             flex-direction: column;
             gap: 25px; /* Space between sections */
@@ -127,12 +128,7 @@
             gap: 30px; /* Gap between time/calendar and doctor selection */
         }
 
-        .time-calendar-section {
-            flex: 1.2; /* Takes more space */
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+       
 
 
         .section-title {
@@ -142,183 +138,49 @@
             font-weight: bold;
             text-transform: uppercase;
         }
-
-        .time-selector-container {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            width: 200px; /* Fixed width for time selector */
+        .container-seletores{
+              display: flex; /* Ativa o Flexbox */
+         /* Permite que os itens quebrem para a próxima linha */
+        border: 1px solid #ccc; /* Apenas para visualização */
         }
 
-        .time-picker {
-            display: flex;
-            justify-content: space-around; /* Distributes space between hour, min, am/pm */
-            align-items: center;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            height: 120px; /* Approximate height */
-        }
+          
+        
 
-        .time-picker > div {
-            text-align: center;
-        }
-
-        .time-picker .column {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%; /* Fill height */
-            justify-content: center; /* Center items vertically */
-        }
-
-        .time-picker .time-unit {
-            padding: 5px 8px;
-            cursor: pointer;
-            color: #aaa;
-            font-size: 16px;
-        }
-        .time-picker .time-unit.selected, .time-picker .time-unit:hover {
-            color: #333;
-            font-weight: bold;
-        }
-        .time-picker .time-unit.highlighted {
-            background-color: #007bff; /* Blue highlight */
+        .seletor-de-horas{
+            width: 300px;
+            height: 100px;
+            background-color: steelblue;
             color: white;
-            border-radius: 4px;
-            padding: 5px 10px;
-            font-size:18px;
-        }
-        .time-picker .separator {
-            font-size: 18px;
-            color: #333;
-            font-weight: bold;
-            align-self: center;
-            padding-bottom: 2px; /* Align with highlighted numbers */
-        }
-
-
-        .calendar-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            flex-grow: 1; /* Allows calendar to take available space */
-            min-width: 320px; /* Minimum width for calendar */
-        }
-
-        .calendar-header {
-            display: flex;
-            justify-content: space-between;
+            display: flex; /* Para centralizar o número dentro do quadrado */
+            justify-content: center;
             align-items: center;
-            margin-bottom: 10px;
-        }
-        .calendar-header .date-display {
-            flex-grow: 1;
-        }
-        .calendar-header .date-display h4 {
-            font-size: 14px;
-            color: #555;
-            margin: 0 0 2px 0;
-        }
-        .calendar-header .date-display p {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 0;
-            color: #333;
-        }
-         .calendar-header .month-year {
-            font-size: 14px;
-            color: #555;
-            text-align: center; /* Center August 2025 */
-            flex-grow: 1;
-         }
-
-        .calendar-nav button {
-            background: none;
-            border: none;
+            margin: 5px; /* Espaçamento entre os quadrados */
             font-size: 20px;
-            cursor: pointer;
-            color: #555;
-            padding: 5px;
+                    background-color: red;
         }
-         .calendar-header .edit-icon {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 18px; /* Adjust as needed */
-            color: #555;
-        }
-
-
-        .calendar-grid table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: center;
-        }
-
-        .calendar-grid th, .calendar-grid td {
-            padding: 8px;
-            font-size: 13px;
-        }
-
-        .calendar-grid th {
-            color: #888;
-            font-weight: normal;
-        }
-
-        .calendar-grid td {
-            cursor: pointer;
-            border-radius: 50%;
-            width: 32px; /* Fixed width */
-            height: 32px; /* Fixed height */
-            line-height: 1; /* Adjust line height for vertical centering */
-        }
-
-        .calendar-grid td:hover {
-            background-color: #e9ecef;
-        }
-
-        .calendar-grid td.today {
-            background-color: #E0EAFC; /* Light blue for today */
-            color: #007bff; /* Blue text */
-            border-radius: 50%;
-        }
-        .calendar-grid td.disabled {
-            color: #ccc;
-            cursor: default;
-        }
-        .calendar-grid td.selected {
-            background-color: #007bff; /* Blue background */
+        .seletor-datas{
+            width: 500px;
+            height: 300px;
+            background-color: steelblue;
             color: white;
-            font-weight: bold;
-            border-radius: 50%;
+            display: flex; /* Para centralizar o número dentro do quadrado */
+            justify-content: center;
+            align-items: center;
+            margin: 5px; /* Espaçamento entre os quadrados */
+            font-size: 20px;
+            background-color: #007bff;
         }
+       
 
-        .calendar-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-        }
+        
 
-        .calendar-actions button {
-            background: none;
-            border: none;
-            color: #007bff;
-            font-size: 14px;
-            font-weight: bold;
-            padding: 8px 12px;
-            cursor: pointer;
-        }
-        .calendar-actions button:hover {
-            background-color: #f0f0f0;
-            border-radius: 4px;
-        }
+   
+
+ 
+      
+        
+      
 
 
         .doctor-selection-container {
@@ -433,7 +295,7 @@
             }
             .menu ul li {
                 border-bottom: none; /* Remove bottom border */
-                border-right: 1px solid #4A9A9A; /* Add right border */
+                border-right: 1px solid #00796b; /* Add right border */
                 padding: 0;
             }
             .menu ul li:first-child {
