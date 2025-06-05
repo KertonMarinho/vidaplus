@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -141,23 +141,33 @@
         .container-seletores{
               display: flex; /* Ativa o Flexbox */
          /* Permite que os itens quebrem para a próxima linha */
-        border: 1px solid #ccc; /* Apenas para visualização */
+        
+         border: 1px solid #ccc; /* Apenas para visualização */
         }
 
           
+        .TEXTO-HORARIO{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+        .HORARIO{
+             width: 100px;
+            height: 20px;
+            margin-left: 89PX;
         
-
+        }
         .seletor-de-horas{
             width: 300px;
             height: 100px;
             background-color: steelblue;
             color: white;
-            display: flex; /* Para centralizar o número dentro do quadrado */
-            justify-content: center;
-            align-items: center;
+            display:FLEX; /* Para centralizar o número dentro do quadrado */
+            justify-content:center;
             margin: 5px; /* Espaçamento entre os quadrados */
             font-size: 20px;
-                    background-color: red;
+                    background-color: rgb(122, 114, 114);
         }
         .seletor-datas{
             width: 500px;
