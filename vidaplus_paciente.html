@@ -6,8 +6,8 @@
     <title>Marcação de Consulta</title>
     <link rel="stylesheet" href="css/style_paciente.css">
     
+    
    
-</head>
 </head>
 <body>
     <div class="container">
@@ -35,7 +35,7 @@
         </aside>
 
         <main class="main-content">
-            <h2> AREA PACIENTE</h2>
+            <div class="title-area"> AREA PACIENTE</div>
             <div class="container-seletores">
                     
                     <div class="seletor-de-horas" style="display: flex; flex-direction: column;">
@@ -60,6 +60,25 @@
                         </select> 
                     </div>
                     <div class="seletor-datas">
+                        <div class="calendario">
+                        <div class="calendario-header" id="mes-ano">
+
+                        </div>
+                            <table>
+                            <thead>
+                            <tr>
+                            <th>Dom</th>
+                            <th>Seg</th>
+                            <th>Ter</th>
+                            <th>Qua</th>
+                            <th>Qui</th>
+                            <th>Sex</th>
+                            <th>Sáb</th>
+                            </tr>
+                            </thead>
+                                <tbody id="dias-calendario"></tbody>
+                            </table>
+                        </div>
 
                     </div>
                       
@@ -69,7 +88,7 @@
             <div class="doctor-selection-container">
                 <h3 class="section-title">SELECIONA MÉDICO:</h3>
                 <div class="doctor-buttons">
-                    <button>CLÍNICO GERAL</button>
+                    <button class="selected">CLÍNICO GERAL</button>
                     <button>DERMATOLOGISTA</button>
                     <button>GINECOLOGISTA</button>
                     <button>ENDOSCOPIA</button>
@@ -90,4 +109,5 @@
         </main>
     </div>
 </body>
+<script src="script_paciente.js"></script>
 </html>

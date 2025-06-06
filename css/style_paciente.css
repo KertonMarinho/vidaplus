@@ -87,7 +87,7 @@
             padding: 8px 5px;
         }
         .menu ul li.active a, .menu ul li a:hover {
-            background-color: rgb(31, 102, 102,0.89); /* Darker teal for hover/active */
+            background-color:#48c062; /* Darker teal for hover/active */
             border-radius: 4px;
         }
 
@@ -97,11 +97,11 @@
         }
 
         .exit-button button {
-            background-color: #555;
+            background-color: #28a745;
             color: white;
             border: none;
             padding: 10px 15px;
-            width: 100%;
+            width: 29%;
             text-align: left;
             font-size: 14px;
             border-radius: 5px;
@@ -161,27 +161,78 @@
         .seletor-de-horas{
             width: 300px;
             height: 100px;
-            background-color: steelblue;
             color: white;
             display:FLEX; /* Para centralizar o número dentro do quadrado */
             justify-content:center;
             margin: 5px; /* Espaçamento entre os quadrados */
             font-size: 20px;
-                    background-color: rgb(122, 114, 114);
+            background-color: #48c062;
+            border: 2px solid #0f881f;
         }
         .seletor-datas{
             width: 500px;
             height: 300px;
-            background-color: steelblue;
-            color: white;
+           
+            
             display: flex; /* Para centralizar o número dentro do quadrado */
             justify-content: center;
-            align-items: center;
+            
             margin: 5px; /* Espaçamento entre os quadrados */
             font-size: 20px;
-            background-color: #007bff;
+          
         }
-       
+
+.calendario {
+border: 1px solid #48c062;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+background-color: white;
+width: 440px;
+}
+.calendario-header {
+background-color: #48c062;
+color: white;
+text-align: center;
+padding: 10px;
+font-weight: bold;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+}
+th {
+background-color: #f4f4f4;
+padding: 10px;
+text-transform: uppercase;
+font-size: 0.8em;
+color: #666;
+}
+td {
+text-align: center;
+padding: 10px;
+border: 1px solid #e0e0e09c;
+transition: background-color 0.3s ease;
+}
+td:hover {
+background-color: #e6f2ff;
+cursor: pointer;
+}
+.dia-atual {
+background-color: #48c062;
+color: white;
+font-weight: bold;
+border-radius: 50%;
+}
+.fim-de-semana {
+color: #888;
+}
+.dia-atual {
+    background-color: #48c062 !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 50%;
+}
 
         
 
@@ -219,11 +270,11 @@
         }
 
         .doctor-buttons button:hover {
-            background-color: #e0e0e0;
+            background-color: #48c062;
             border-color: #ccc;
         }
         .doctor-buttons button.selected {
-            background-color: #007bff;
+            background-color: #48c062;
             color: white;
             border-color: #007bff;
         }
@@ -261,7 +312,7 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 68px) {
             .container {
                 flex-direction: column;
                 height: auto;
@@ -294,6 +345,15 @@
             .profile h2 {
                 font-size: 16px;
                 padding: 8px 10px;
+            }
+            .title-area {
+               
+                background-color: red;
+                color: rgb(148, 17, 17);
+                display: block;
+                padding: 10px 0;
+                border-radius: 5px;
+                margin: 0;
             }
             .menu {
                 flex-grow: 1; /* Menu takes available space */
@@ -342,4 +402,9 @@
             }
         }
 
-    </style>
+/* Adicione ao seu arquivo CSS */
+  .doctor-buttons button.selected {
+                    background-color: #48c062;
+                    color: #fff;
+                    border: 2px solid #0f881f;
+                }

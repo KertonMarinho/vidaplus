@@ -1,87 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<title>Calendário Dinâmico</title>
-
-<style>
-body {
-font-family: Arial, sans-serif;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-margin: 0;
-background-color: #f0f0f0;
-}
-.calendario {
-border: 1px solid #ccc;
-border-radius: 10px;
-overflow: hidden;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-background-color: white;
-width: 340px;
-}
-.calendario-header {
-background-color: #4a90e2;
-color: white;
-text-align: center;
-padding: 10px;
-font-weight: bold;
-}
-table {
-width: 100%;
-border-collapse: collapse;
-}
-th {
-background-color: #f4f4f4;
-padding: 10px;
-text-transform: uppercase;
-font-size: 0.8em;
-color: #666;
-}
-td {
-text-align: center;
-padding: 10px;
-border: 1px solid #e0e0e0;
-transition: background-color 0.3s ease;
-}
-td:hover {
-background-color: #e6f2ff;
-cursor: pointer;
-}
-.dia-atual {
-background-color: #4a90e2;
-color: white;
-font-weight: bold;
-border-radius: 50%;
-}
-.fim-de-semana {
-color: #888;
-}
-</style>
-</head>
-<body>
-<div class="calendario">
-<div class="calendario-header" id="mes-ano">
-
-</div>
-<table>
-<thead>
-<tr>
-<th>Dom</th>
-<th>Seg</th>
-<th>Ter</th>
-<th>Qua</th>
-<th>Qui</th>
-<th>Sex</th>
-<th>Sáb</th>
-</tr>
-</thead>
-<tbody id="dias-calendario"></tbody>
-</table>
-</div>
-<script>
 let dataSelecionada = null;
 let mesAtual = (new Date()).getMonth();
 let anoAtual = (new Date()).getFullYear();
@@ -165,14 +81,10 @@ function renderizarCalendario(mes, ano) {
 
 // Inicializa com o mês atual
 renderizarCalendario(mesAtual, anoAtual);
-</script>
-<style>
-.dia-atual {
-    background-color: #0074d9 !important;
-    color: white !important;
-    font-weight: bold;
-    border-radius: 50%;
-}
-</style>
-</body>
-</html>
+
+ document.querySelectorAll('.doctor-buttons button').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('.doctor-buttons button').forEach(b => b.classList.remove('selected'));
+                        this.classList.add('selected');
+                    });
+                });
