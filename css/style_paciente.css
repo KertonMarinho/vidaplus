@@ -57,7 +57,7 @@
         .profile h2 {
             font-size: 24px;
             font-weight: bold;
-            background-color: #E0E0E0;
+            background-color: #fcfbfb;
             color: #333;
             padding: 10px 0;
             border-radius: 5px;
@@ -96,21 +96,21 @@
             margin-top: auto; /* Pushes to the bottom */
         }
 
-        .exit-button button {
+        .exit-link {
             background-color: #28a745;
             color: white;
             border: none;
             padding: 10px 15px;
-            width: 29%;
+            width: 19%;
             text-align: left;
             font-size: 14px;
             border-radius: 5px;
             cursor: pointer;
             display: flex;
-            justify-content: space-between;
+            justify-content:space-around;
             align-items: center;
         }
-        .exit-button button:hover {
+        .exit-link:hover {
             background-color: #444;
         }
 
@@ -233,7 +233,9 @@ color: #888;
     font-weight: bold;
     border-radius: 50%;
 }
-
+ .titulo-area {
+                color: #28a745;
+            }
         
 
    
@@ -249,6 +251,12 @@ color: #888;
             display: flex;
             flex-direction: column;
         }
+        .paciente-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Responsive grid */
+            gap: 10px;
+            margin-top: 10px;
+        }
 
         .doctor-buttons {
             display: grid;
@@ -257,7 +265,7 @@ color: #888;
             margin-top: 10px;
         }
 
-        .doctor-buttons button {
+        .doctor-buttons button  {
             background-color: #f0f0f0;
             border: 1px solid #ddd;
             padding: 12px 10px;
@@ -300,17 +308,7 @@ color: #888;
         }
 
         /* Responsive adjustments */
-        @media (max-width: 1100px) { /* Increased breakpoint for better layout */
-            .appointment-sections {
-                flex-direction: column;
-            }
-            .time-selector-container {
-                width: auto; /* Full width in smaller screens */
-            }
-            .main-content {
-                padding: 20px;
-            }
-        }
+  
 
         @media (max-width: 68px) {
             .container {
@@ -346,15 +344,7 @@ color: #888;
                 font-size: 16px;
                 padding: 8px 10px;
             }
-            .title-area {
-               
-                background-color: red;
-                color: rgb(148, 17, 17);
-                display: block;
-                padding: 10px 0;
-                border-radius: 5px;
-                margin: 0;
-            }
+           
             .menu {
                 flex-grow: 1; /* Menu takes available space */
                 overflow-x: auto; /* Allow horizontal scrolling for menu items if they overflow */
@@ -379,21 +369,8 @@ color: #888;
                 font-size: 12px;
                 white-space: nowrap; /* Prevent link text from wrapping */
             }
-            .exit-button {
-                margin-top: 0;
-                margin-left: 10px; /* Space from menu */
-            }
-            .exit-button button {
-                width: auto;
-                padding: 8px 10px;
-                font-size: 12px;
-            }
-             .exit-button button span { display: none; } /* Hide "SAIR" text, show only X */
-            .main-action-button {
-                align-self: center;
-                width: 100%;
-                margin-top: 20px;
-            }
+           
+           
             .main-action-button button {
                 width: 100%;
             }
