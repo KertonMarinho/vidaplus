@@ -385,3 +385,154 @@ color: #888;
                     color: #fff;
                     border: 2px solid #0f881f;
                 }
+
+
+
+
+
+/*area medica:*/
+
+
+
+
+/* Seção de Telemedicina */
+
+/* Seção Sala de Espera */
+.sala-de-espera {
+    flex-basis: 45%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.sala-de-espera h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.espera-circulo {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px auto;
+}
+
+.espera-circulo span {
+    font-size: 48px;
+    color: #333;
+}
+
+.sala-de-espera p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Seção Pacientes Recentes */
+.dashboard-container {
+    width: 750px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Seção de Telemedicina */
+
+.stat-card {
+    background-color: #28a745;
+    border: 2px solid #6b6666;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.stat-label {
+    font-size: 17px;
+    color: #333;
+}
+
+/* Seção Sala de Espera */
+.sala-de-espera {
+    flex-basis: 45%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.sala-de-espera h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.espera-circulo {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px auto;
+}
+
+.espera-circulo span {
+    font-size: 48px;
+    color: #333;
+}
+
+.sala-de-espera p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Seção Pacientes Recentes */
+.pacientes-recentes {
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.pacientes-recentes h4 {
+    margin: 0 0 15px 0;
+    font-weight: normal;
+}
+
+.paciente-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.paciente-item input[type="radio"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.paciente-item label {
+    font-size: 16px;
+}
+
+.paciente-item label {
+    font-size: 16px;
+}

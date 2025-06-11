@@ -38,73 +38,52 @@
 
         <main class="main-content">
             <div class="titulo-area"> AREA MÉDICA</div>
-            <div class="container-seletores">
-                    
-                    <div class="seletor-de-horas" style="display: flex; flex-direction: column;">
-                        <label class="TEXTO-HORARIO">HORÁRIO DISPONÍVEL</label>
-                        <select class="HORARIO">
-                            <option value="1">8:00</option>
-                            <option value="2">8:30</option>
-                            <option value="3">9:30</option>
-                            <option value="4">10:00</option>
-                            <option value="5">10:30</option>
-                            <option value="5">11:00</option>
-                            <option value="5">11:30</option>
-                            <option value="5">13:00</option>
-                            <option value="5">13:30</option>
-                            <option value="5">14:00</option>
-                            <option value="5">15:30</option>
-                            <option value="5">16:00</option>
-                            <option value="5">16:30</option>
-                            <option value="5">17:00</option>
-
-
-                        </select> 
-                    </div>
-                    <div class="seletor-datas">
-                        <div class="calendario">
-                        <div class="calendario-header" id="mes-ano">
-
-                        </div>
-                            <table>
-                            <thead>
-                            <tr>
-                            <th>Dom</th>
-                            <th>Seg</th>
-                            <th>Ter</th>
-                            <th>Qua</th>
-                            <th>Qui</th>
-                            <th>Sex</th>
-                            <th>Sáb</th>
-                            </tr>
-                            </thead>
-                                <tbody id="dias-calendario"></tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                      
-            </div>
-          
-
-            <div class="doctor-selection-container">
-                <h3 class="section-title">SELECIONA PACIENTE:</h3>
-                <div class="paciente-buttons">
-                    <button class="selected">Light Yagami</button>
-                    <button>DERMATOLOGISTA</button>
-                    <button>GINECOLOGISTA</button>
-                    <button>ENDOSCOPIA</button>
-                    <button>CARDIOLOGISTA</button>
-                    <button>PEDIATRA</button>
-                    <button>ORTOPEDIA</button>
-                    <button>OFTAMOLOGISTA</button>
-                    <button>PSIQUIATRA</button>
-                    <button>UROLOGISTA</button>
-                    <button>ONCOLOGIA</button>
-                    <button>NEUROLOGISTA</button>
+            <div class="dashboard-container">
+        <div class="main-content">
+            <div class="telemedicina-stats">
+                <div class="stat-card">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Pacientes atendidos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Agendamentos Hoje</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Pacientes internados</span>
                 </div>
             </div>
 
+            <div class="sala-de-espera">
+                <h3>Sala de espera</h3>
+                <div class="espera-circulo">
+                    <span>2</span>
+                </div>
+                <p>Pacientes aguardando</p>
+            </div>
+        </div>
+
+        <div class="pacientes-recentes">
+            <h4>Pacientes recentes</h4>
+            <div class="paciente-item">
+                <input type="radio" id="paciente1" name="paciente">
+                <label for="paciente1">Abrahm Lincoln</label>
+            </div>
+            <div class="paciente-item">
+                <input type="radio" id="paciente2" name="paciente" checked>
+                <label for="paciente2">Isaac Asimov</label>
+            </div>
+            <div class="paciente-item">
+                <input type="radio" id="paciente3" name="paciente">
+                <label for="paciente3">Alcapone</label>
+            </div>
+        </div>
+    </div>
+
+          
+
+            
             <div class="main-action-button">
                 <button>AVANÇAR</button>
             </div>
