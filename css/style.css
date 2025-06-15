@@ -57,9 +57,9 @@ header::before { /* Dark overlay for better text readability */
 }
 
 .admin-link {
-    position: relative;
-    left: 980px;
-    color: #ccc;
+       position: relative;
+        left: 980px;
+        
 }
 .admin-link:hover {
     color: white;
