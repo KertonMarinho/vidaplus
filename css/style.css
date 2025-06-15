@@ -22,8 +22,8 @@ ul {
 /* Header */
 header {
     background-image: url('image/raphael-ai.jpeg'); /* Replace with your actual hero image URL */
-  
-    background-position: center 12%; /* Adjust to focus on the person's face */
+    background-size: cover;
+     /* Adjust to focus on the person's face */
     color: white;
     padding-bottom: 400px; /* Space for nav below hero image part */
     position: relative; /* For pseudo-element overlay */
