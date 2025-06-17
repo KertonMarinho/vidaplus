@@ -48,34 +48,58 @@ header::before { /* Dark overlay for better text readability */
 }
 
 .header-top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 20px;
-    background-color: rgba(0, 0, 0, 0.2); /* Slightly darker bar */
-    font-size: 0.8em;
+     display: flex; /* Torna o container um flex container */
+  justify-content: flex-end; /* Alinha os itens filhos à direita */
+  align-items: center; /* Centraliza os itens verticalmente */
+  /* Adicione padding, background ou outras propriedades para o container principal se necessário */
+  width: 100%; /* Exemplo: ocupa a largura total */
+ padding: 8px 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 0.8em; 
+   
+     
+    
+}
+.cadastrar{
+    background-color: rgba(240, 234, 234, 0.329);
+    margin-right: 10px;
+    color: #333;
+    font-size:1.4em;
+}
+.cadastrar:hover{
+    background-color: white;
+    color: rgb(8, 8, 8);
 }
 
 .admin-link {
-       position: relative;
-        left: 980px;
+        background-color: rgba(240, 234, 234, 0.329);
+    margin-right: 10px;
+    color: #333;
+    font-size:1.3em;
         
 }
+
 .admin-link:hover {
-    color: white;
+    background-color: white;
+    color: rgb(8, 8, 8);
 }
 
 .search-container {
     display: flex;
     align-items: center;
+    margin-right: 40px;
 }
 
 .search-container input[type="text"] {
     padding: 5px 8px;
     border: 1px solid #555;
     border-radius: 3px 0 0 3px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(240, 234, 234, 0.329);
     color: #333;
+}
+.search-container input[type="text"]:hover{
+    background-color: white;
+    color: rgb(8, 8, 8);
 }
 
 .search-container button {
@@ -182,7 +206,7 @@ main {
 }
 
 .search-clinic-btn, .chat-btn {
-    background-color: #d8e941; /* Bright green */
+    background-color: rgb(138, 33, 132); /* Bright green */
     color: black;
     font-weight: bold;
     cursor: pointer;
