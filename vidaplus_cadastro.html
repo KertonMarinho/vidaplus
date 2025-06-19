@@ -2,11 +2,11 @@
 <html lang="pt-Br">
 <head>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="assets/style_cadastro.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/style-subpage.css"/>
 </head>
 <body>
     
-<div class="container">
+<div class="container_cadastro">
         <div class="form">
             <div class="form_h3"> Cadastro </div>
             <form method="post" action="cadastro.php" class="validator" >
@@ -14,7 +14,7 @@
                     <input type="text" name="Nome Completo" placeholder="Nome completo"  onkeydown= "EnterTab" data-rules="required|min=4"/>
                 </div>
                 <div class="campo">
-                    <input type="text" name="Endereço" placeholder="Endereço" onkeydown= "EnterTab"  data-rules="required|min =4"/>
+                    <input type="text" name="Endereço" placeholder="Endereço (rua,número,bairro,cidade,estado)" onkeydown= "EnterTab"  data-rules="required|min =4"/>
                 </div>
                 <div class="campo">
                     <input type="email"name="emailUsuario" placeholder="Email" onkeydown= "EnterTab" riquired data-rules="required"/>
@@ -28,18 +28,24 @@
                         <option>masculino</option>
                     </select><br/>
                 </div>
-                <div class="campo"><p>
-                    <label id="declaracaoAlien"><nb>Eu declaro que não sou alienigena Alienado</nb></label>
-                    <input type="checkbox" id="checkbox" valie="lsdldlld"/>
-                    <input type="tel" name="telefone" placeholder="telefone">
-                    
-                </p></div>
                 <div class="campo">
-                    <input type="submit" id="enviar" value="cadastrar"/>
+                    
+                     <input class="password" type="password" name="password" placeholder="Digite novamente a senha"  onkeydown= "EnterTab" data-rules="required|min=4"/>
+                   
                 </div>
+                <div class="campo">
+                    <input class="password" type="tel" name="telefone" placeholder="telefone">
+                </div>
+                 <div class="exit-button">
+                    <a href="index.html" class="exit-link">SAIR</a>
+                    <a href="index.html" class="exit-link">CADASTRAR</a>
+                </div>
+                
             </form>
         </div>
+        
     </div>
+    
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

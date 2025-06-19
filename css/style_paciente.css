@@ -310,74 +310,7 @@ color: #888;
         /* Responsive adjustments */
   
 
-        @media (max-width: 68px) {
-            .container {
-                flex-direction: column;
-                height: auto;
-            }
-            .sidebar {
-                width: 100%;
-                height: auto;
-                flex-direction: row; /* Horizontal layout for sidebar items */
-                align-items: center;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-            .profile {
-                margin-bottom: 0;
-                margin-right: 20px;
-                display: flex; /* Align icon and text */
-                align-items: center;
-            }
-            .profile-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-                margin-right: 10px; /* Space between icon and PACIENTE */
-                margin-bottom: 0;
-            }
-             .profile-icon svg {
-                width: 25px;
-                height: 25px;
-            }
-            .profile h2 {
-                font-size: 16px;
-                padding: 8px 10px;
-            }
-           
-            .menu {
-                flex-grow: 1; /* Menu takes available space */
-                overflow-x: auto; /* Allow horizontal scrolling for menu items if they overflow */
-            }
-            .menu ul {
-                display: flex; /* Horizontal menu items */
-                flex-wrap: nowrap; /* Prevent wrapping */
-            }
-            .menu ul li {
-                border-bottom: none; /* Remove bottom border */
-                border-right: 1px solid #00796b; /* Add right border */
-                padding: 0;
-            }
-            .menu ul li:first-child {
-                border-top: none;
-            }
-            .menu ul li:last-child {
-                border-right: none;
-            }
-            .menu ul li a {
-                padding: 10px 8px;
-                font-size: 12px;
-                white-space: nowrap; /* Prevent link text from wrapping */
-            }
-           
-           
-            .main-action-button button {
-                width: 100%;
-            }
-             .doctor-buttons {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            }
-        }
+
 
 /* Adicione ao seu arquivo CSS */
   .doctor-buttons button.selected {
@@ -397,40 +330,7 @@ color: #888;
 
 /* Seção de Telemedicina */
 
-/* Seção Sala de Espera */
-.sala-de-espera {
-    flex-basis: 45%;
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-}
 
-.sala-de-espera h3 {
-    margin: 0 0 15px 0;
-    font-size: 16px;
-    font-weight: normal;
-}
-
-.espera-circulo {
-    width: 100px;
-    height: 100px;
-    border: 2px solid #aaa;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 10px auto;
-}
-
-.espera-circulo span {
-    font-size: 48px;
-    color: #333;
-}
-
-.sala-de-espera p {
-    margin: 0;
-    font-size: 14px;
-}
 
 /* Seção Pacientes Recentes */
 .dashboard-container {
