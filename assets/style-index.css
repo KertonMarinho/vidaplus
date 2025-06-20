@@ -206,7 +206,7 @@ main {
 }
 
 .search-clinic-btn, .chat-btn {
-    background-color: rgb(138, 33, 132); /* Bright green */
+    background-color: #ff6f61; /* Bright green */
     color: black;
     font-weight: bold;
     cursor: pointer;

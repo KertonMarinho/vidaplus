@@ -145,3 +145,32 @@ let form = document.querySelector('.validator');
 form.addEventListener('submit',validator.handleSubmit);
 
 }
+
+ function confirmarCadastro() {
+    // Pega os valores dos inputs
+    //const nome = document.getElementById("nome").value.trim();
+    //const email = document.getElementById("email").value.trim();
+
+    // Verifica se todos os campos estão preenchidos
+    //if (nome === "" || email === "") {
+      //alert("Por favor, preencha todos os campos antes de cadastrar.");
+      //return;
+    //}
+    // Mensagem da janela
+    const mensagem = "<h2>Cadastro realizado com sucesso!</h2><p><h4>Volte a página inicial</h4></p>";
+    
+    // Abre uma nova janela (popup)
+    const novaJanela = window.open("", "popup", "width=300,height=150");
+    
+    // Escreve a mensagem na nova janela
+    novaJanela.document.write(`
+          <html>
+      <head>
+        <title>Sucesso</title>
+      </head>
+      <body style="font-family: Arial; text-align: center; padding-top: 30px; background-color: rgba(85,156, 160, 100);">
+        ${mensagem}
+      </body>
+      </html>
+    `);
+  }
