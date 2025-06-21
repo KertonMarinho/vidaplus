@@ -7,44 +7,41 @@
 <body>
     
 <section class="container_cadastro">
-        <div class="form">
-            <div class="form_h3"> Cadastro </div>
-            <form method="post" action="cadastro.php" class="validator" >
-                <div class="campo"> 
-                    <input type="text" id="name" name="Nome Completo" placeholder="Nome completo"  onkeydown= "EnterTab" data-rules="required|min=4"/>
-                </div>
-                <div class="campo">
-                    <input type="text" name="Endereço" placeholder="Endereço (rua,número)" onkeydown= "EnterTab"  data-rules="required|min =4"/>
-                </div>
-                <div class="campo">
-                   <input class="password" type="text" name="Endereço" placeholder="Bairro" onkeydown= "EnterTab"  data-rules="required|min =4"/>
-                    <input class="password" type="text" id="cid" name="Endereço" placeholder="Cidade/estado" onkeydown= "EnterTab"  data-rules="required|min =4"/>
-                    <select name="ordenação"id="sexo">
-                        <option>feminino</option>
-                        <option>masculino</option>
-                    </select>
-                </div>
-                <div class="campo">
-                    <input type="email"id="email" name="emailUsuario" placeholder="Email" onkeydown= "EnterTab" riquired data-rules="required"/>
-                </div>
-                
-                <div class="campo">
-                    
-                     <input class="password" type="password" name="password" placeholder="Senha"  onkeydown= "EnterTab" data-rules="required|min=4"/>
-                    <P><input class="password" type="password" name="password" placeholder="Digite novamente a senha"  onkeydown= "EnterTab" data-rules="required|min=4"/></P>
-                </div>
-                <div class="campo">
-                    <input class="password" type="tel" name="telefone" placeholder="telefone">
-                    <p><input class="password" type="number" name="CPF" placeholder="CPF"></p>
-                </div>
-                 <div class="exit-button">
-                    <a href="index.html" class="exit-link">SAIR</a>
-                    <a href="" onclick="confirmarCadastro()" class="exit-link">CADASTRAR</a>
-                </div>
-                
-            </form>
-        </div>
-        
+    <div class="form">
+        <div class="form_h3"> Cadastro </div>
+        <form method="post" action="cadastro.php" class="validator">
+            <div class="campo">
+                <input type="text"  id="name" name="nomeCompleto" placeholder="Nome completo" onkeydown="handleEnterTab(event)" data-rules="required|min=4"/>
+            </div>
+            <div class="campo">
+                <input type="text"  id="enderecoRua" name="enderecoRua" placeholder="Endereço (rua, número)" onkeydown="handleEnterTab(event)" data-rules="required|min=4"/>
+            </div>
+            <div class="campo">
+                <input type="text" class="password"  id="bairro" name="bairro" placeholder="Bairro" onkeydown="handleEnterTab(event)" data-rules="required|min=4"/>
+                <input type="text"class="password"  id="cidadeEstado" name="cidadeEstado" placeholder="Cidade/Estado" onkeydown="handleEnterTab(event)" data-rules="required|min=4"/>
+                <select name="sexo" id="sexo">
+                    <option value="">Selecione o sexo</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                </select>
+            </div>
+            <div class="campo">
+                <input type="email"  id="email" name="emailUsuario" placeholder="Email" onkeydown="handleEnterTab(event)" required data-rules="required|email"/>
+            </div>
+            <div class="campo">
+                <input class="password" type="password" id="senha" name="senha" placeholder="Senha" onkeydown="handleEnterTab(event)" data-rules="required|min=4"/>
+                <p><input class="password" type="password" id="confirmaSenha" name="confirmaSenha" placeholder="Digite novamente a senha" onkeydown="handleEnterTab(event)" data-rules="required|min=4"/></p>
+            </div>
+            <div class="campo">
+                <input type="tel"class="password"  id="telefone" name="telefone" placeholder="Telefone">
+                <p><input type="text"class="password"  id="cpf" name="cpf" placeholder="CPF" data-rules="required|min=11|max=11"></p>
+            </div>
+            <div class="exit-button">
+                <a href="index.html" class="exit-link">SAIR</a>
+                <button type="submit" class="exit-link">CADASTRAR</button>
+            </div>
+        </form>
+    </div>
 </section>
     
     <script type="text/javascript" src="script.js"></script>

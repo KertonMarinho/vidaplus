@@ -45,132 +45,144 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     });
     // cadastro_paciente
-    let validator  = {
-    handleSubmit:(event)=> {
-        event.preventDefault(); /*previna o comportamento padrão(para o enviar)*/
+    // Variável global para o formulário
+let form = document.querySelector('.validator');
+
+let validator = {
+    handleSubmit: (event) => {
+        event.preventDefault(); // Previne o comportamento padrão de envio do formulário
 
         let send = true;
 
-        let inputs =  form.querySelectorAll('input');
+        let inputs = form.querySelectorAll('input, select'); // Inclui select para validação
 
-        validator.clearErrors();//limpar os erros
+        validator.clearErrors(); // Limpa os erros anteriores
 
-        for(let i=0;i<inputs.length;i++) {
+        for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
-            let check =validator.checkInput(input);  //ver todos tem o campo(data-rules) estão preecnhidos no input
+            let check = validator.checkInput(input); // Verifica as regras de validação para cada input
             if (check !== true) {
                 send = false;
                 validator.showError(input, check);
             }
         }
-        if(send) {
-            form.submit();""
+
+        // Validação de senhas
+        let senha = document.getElementById('senha');
+        let confirmaSenha = document.getElementById('confirmaSenha');
+        if (senha && confirmaSenha && senha.value !== confirmaSenha.value) {
+            send = false;
+            validator.showError(confirmaSenha, 'As senhas não coincidem.');
+        }
+
+        if (send) {
+            form.submit(); // Envia o formulário se tudo estiver válido
         }
     },
-    checkInput:(input) => { /*vai checar se tem alguma regra e conferi as regras*/
-        let rules = input.getAttribute('data-rules'); //DATA RULES É NOME CRIADO POR MIN PARA ARMAZENAR UM VALOR E RETORNA ESTE VALOR
+    checkInput: (input) => {
+        let rules = input.getAttribute('data-rules');
 
-        
-
-        function EnterTab(Input,Evento){
-
-            if(Evento.keyCode == 13){       
-
-            document.getElementById(Input).focus();
-
-        }
-
-    }
-        if(rules !== null){
-            rules = rules.split('|'); //separa as regras
-            for(let k in rules) {//VERIFICA AS REGRAS
+        if (rules !== null) {
+            rules = rules.split('|');
+            for (let k in rules) {
                 let rDetails = rules[k].split('=');
-                switch (rDetails[0]) { //ITEM DA REGRA  
-                    case'required': //VER SO O REQUIERD ESTÁ COMPLETADO
-                        if(input.value == '') {
-                            return 'Campo não pode ser vazio.';
-                        }
+                let ruleName = rDetails[0];
 
-                    break;
-                    case 'min':  //validar o numero de caracteres
-                        if(input.value.length < rDetails[1]) {
-                            return 'Campo tem que ter pelo menos ' +rDetails[1]+' caracteres';
+                switch (ruleName) {
+                    case 'required':
+                        if (input.value.trim() === '') { // Usar trim() para remover espaços em branco
+                            input.placeholder = 'Campo não pode ser vazio.'; // Mensagem no placeholder
+                             // Ainda retorna para controle interno
                         }
-                    break;
+                        break;
+                    case 'min':
+                        if (input.value.length < parseInt(rDetails[1])) {
+                            return 'Campo tem que ter pelo menos ' + rDetails[1] + ' caracteres.';
+                        }
+                        break;
+                    case 'max':
+                        if (input.value.length > parseInt(rDetails[1])) {
+                            return 'Campo tem que ter no máximo ' + rDetails[1] + ' caracteres.';
+                        }
+                        break;
                     case 'email':
-                        if(input.value != '') {
+                        if (input.value !== '') {
                             let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                            if(!regex.test(input.value.toLowerCase())) {
+                            if (!regex.test(input.value.toLowerCase())) {
                                 return 'E-mail digitado não é válido!';
                             }
                         }
-                    break;
+                        break;
                 }
             }
         }
         return true;
     },
-    showError:(input, error) => {
-
-        document.querySelector('input').style.border="2px solid #ff0000";
+    showError: (input, error) => {
+        input.style.border = "2px solid #ff0000"; // Define a borda vermelha para o input com erro
 
         let errorElement = document.createElement('div');
         errorElement.classList.add('error');
-        errorElement.innerHTML =error;
+        errorElement.innerHTML = error;
 
-        /*não existe uma funçao especifica no js que adiciona depois do elemento,somente antes do elemento (insertBefore)
-        soluçao:pegar o item depois dele(elementsibling)*/
-        input.parentElement.insertBefore(errorElement, input.Elementsibling);
+        // Adiciona a mensagem de erro depois do input
+        input.parentElement.insertBefore(errorElement, input.nextElementSibling);
     },
-    clearErrors:() => {
-        let inputs = form.querySelectorAll('input');
-        for(let i=0;i<inputs.length;i++) {
-            inputs[i].style = '';
+    clearErrors: () => {
+        let inputs = form.querySelectorAll('input, select'); // Inclui select para limpar estilos
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].style.border = ''; // Remove o estilo de borda
         }
         let errorElements = document.querySelectorAll('.error');
-        for(let i=0;i<errorElements.length;i++) {   //ir em cada elemento e remover
-            errorElements[i].remove();
+        for (let i = 0; i < errorElements.length; i++) {
+            errorElements[i].remove(); // Remove as mensagens de erro
         }
     }
 };
-function EnterTab(Input,Evento){
 
-    if(Evento.keyCode == 13){       
+// Adiciona o event listener para o formulário
+form.addEventListener('submit', validator.handleSubmit);
 
-    document.querySelectorAll('Input').focus();
-
+// Função para avançar com a tecla Enter
+function handleEnterTab(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault(); // Previne o envio do formulário ao pressionar Enter
+        const formElements = Array.from(form.querySelectorAll('input, select, textarea, button[type="submit"]'));
+        const currentIndex = formElements.indexOf(event.target);
+        if (currentIndex > -1 && currentIndex < formElements.length - 1) {
+            formElements[currentIndex + 1].focus();
+        } else if (currentIndex === formElements.length - 1) {
+            // Se for o último elemento, pode-se decidir se envia o formulário ou foca no primeiro campo
+            form.querySelector('button[type="submit"]').click(); // Simula o clique no botão de submit
+        }
+    }
 }
 
-let form = document.querySelector('.validator');
-form.addEventListener('submit',validator.handleSubmit);
-
-}
-
- function confirmarCadastro() {
+ //function confirmarCadastro() {
     // Pega os valores dos inputs
     //const nome = document.getElementById("nome").value.trim();
-    //const email = document.getElementById("email").value.trim();
+  //  const email = document.getElementById("email").value.trim();
 
     // Verifica se todos os campos estão preenchidos
     //if (nome === "" || email === "") {
-      //alert("Por favor, preencha todos os campos antes de cadastrar.");
-      //return;
-    //}
+   // alert("Por favor, preencha todos os campos antes de cadastrar.");
+   // return;
+   // }
     // Mensagem da janela
-    const mensagem = "<h2>Cadastro realizado com sucesso!</h2><p><h4>Volte a página inicial</h4></p>";
+    //const mensagem = "<h2>Cadastro realizado com sucesso!</h2><p><h4>Volte a página inicial</h4></p>";
     
     // Abre uma nova janela (popup)
-    const novaJanela = window.open("", "popup", "width=300,height=150");
+    //const novaJanela = window.open("", "popup", "width=300,height=150");
     
     // Escreve a mensagem na nova janela
-    novaJanela.document.write(`
-          <html>
-      <head>
-        <title>Sucesso</title>
-      </head>
-      <body style="font-family: Arial; text-align: center; padding-top: 30px; background-color: rgba(85,156, 160, 100);">
-        ${mensagem}
-      </body>
-      </html>
-    `);
-  }
+    //novaJanela.document.write(`
+     //     <html>
+    //  <head>
+    //    <title>Sucesso</title>
+   //   </head>
+   //   <body style="font-family: Arial; text-align: center; padding-top: 30px; background-color: rgba(85,156, 160, 100);">
+   //     ${mensagem}
+   //   </body>
+  //    </html>
+ //   `);
+ // }
