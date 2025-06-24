@@ -42,7 +42,7 @@ header::before { /* Dark overlay for better text readability */
 
 
 
-.header-top-bar, .header-content, .search-container {
+.header-top-bar, .header-content, .pesquisa-container {
     position: relative; /* To be above the overlay */
     z-index: 2;
 }
@@ -84,25 +84,25 @@ header::before { /* Dark overlay for better text readability */
     color: rgb(8, 8, 8);
 }
 
-.search-container {
+.pesquisa-container {
     display: flex;
     align-items: center;
     margin-right: 40px;
 }
 
-.search-container input[type="text"] {
+.pesquisa-container input[type="text"] {
     padding: 5px 8px;
     border: 1px solid #555;
     border-radius: 3px 0 0 3px;
     background-color: rgba(240, 234, 234, 0.329);
     color: #333;
 }
-.search-container input[type="text"]:hover{
+.pesquisa-container input[type="text"]:hover{
     background-color: white;
     color: rgb(8, 8, 8);
 }
 
-.search-container button {
+.pesquisa-container button {
     padding: 5px 8px;
     background-color: #555;
     color: white;
@@ -130,7 +130,7 @@ header::before { /* Dark overlay for better text readability */
      z-index:2;
 }
 
-.user-type-nav ul {
+.user-type ul {
     display: inline-flex;
       position: absolute;
     bottom: 36px;
@@ -144,7 +144,7 @@ li{
   padding: 10px;
 }
 
-.user-type-nav li a {
+.user-type li a {
     padding: 10px 20px;
     margin-right: 5px;
     background-color: rgba(0, 0, 0, 0.3);
@@ -153,8 +153,8 @@ li{
     font-weight: bold;
 }
 
-.user-type-nav li a.active,
-.user-type-nav li a:hover {
+.user-type li a.active,
+.user-type li a:hover {
     background-color: #f0f4f8; /* Same as main page background */
     color: #00796b; /* Teal color */
 }
@@ -165,7 +165,7 @@ main {
     padding: 0 20px; /* Add some side padding to the main content */
 }
 
-.content-wrapper {
+.pesquisa-centro {
     display: flex;
     gap: 20px;
     max-width: 1600px;
@@ -223,8 +223,8 @@ main {
 }
 
 
-/* Specialties Grid */
-.specialties {
+/* especialidades */
+.especialidade-card {
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -235,7 +235,7 @@ main {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.specialty-card {
+.especialidade {
     background-color: white;
     padding: 20px;
     text-align: center;
@@ -251,35 +251,35 @@ main {
     justify-content: center;
 }
 
-.specialty-card:hover {
+.especialidade:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 8px rgba(0,0,0,0.25);
 }
 
 
 /* How it Works Section */
-.how-it-works {
+.como-funciona {
     max-width: 1200px;
     margin: 40px auto;
     text-align: center;
     padding: 20px;
 }
 
-.how-it-works h2 {
+.como-funciona h2 {
     font-size: 2em;
     color: #00796b; /* Teal color */
     margin-bottom: 30px;
     font-weight: normal; /* Lighter than the default h2 bold */
 }
 
-.steps-container {
+.passos-container {
     display: flex;
     justify-content: space-around;
     gap: 20px;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-.step-card {
+.passos-card {
     background-color: #e3f2fd; /* Light blue */
     padding: 25px 20px;
     border-radius: 8px;
@@ -291,19 +291,19 @@ main {
     position: relative; /* For the date tag */
 }
 
-.step-card .icon-placeholder {
+.passos-card .icon-placeholder {
     margin-bottom: 15px;
     color: #00796b; /* Teal for icons */
 }
 
-.step-card h3 {
+.passos-card h3 {
     font-size: 1.3em;
     color: #1e88e5; /* Blue */
     margin-top: 0;
     margin-bottom: 10px;
 }
 
-.step-card p {
+.passos-card p {
     font-size: 0.9em;
     color: #555;
     line-height: 1.5;
