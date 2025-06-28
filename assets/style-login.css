@@ -1,0 +1,73 @@
+/*tela de login*/
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa 100% da altura da tela */
+    margin: 0;
+}
+
+/* Container do formulário */
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+/* Título */
+.login-container h2 {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Grupo de input (label + input) */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho do input */
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Mensagem de erro */
+.error-text {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-weight: bold;
+    height: 20px; /* Para evitar que o layout se mova quando a mensagem aparecer */
+}
