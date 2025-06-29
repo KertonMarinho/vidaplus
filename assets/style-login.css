@@ -2,7 +2,7 @@
 /* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    background-color: rgba(85,156, 160, 100);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ body {
 
 /* Container do formulário */
 .login-container {
-    background-color: #fff;
+    background-color: #bdcfc2e7;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -70,4 +70,22 @@ button:hover {
     margin-top: 15px;
     font-weight: bold;
     height: 20px; /* Para evitar que o layout se mova quando a mensagem aparecer */
+}
+.exit-button{
+    display: flex;
+    justify-content: center;
+}
+.exit-link {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    width: 19%;
+    text-align: left;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
 }

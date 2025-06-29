@@ -12,15 +12,18 @@
         <form id="login-form">
             <div class="input-group">
                 <label for="username">Usuário:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username"required placeholder="senha:paciente,medico,tecnico" required>
             </div>
             <div class="input-group">
                 <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required placeholder="123" required>
             </div>
             <button type="submit">Entrar</button>
             <p id="error-message" class="error-text"></p>
         </form>
+        <div class="exit-button">
+                <a href="index.html" class="exit-link">SAIR</a>
+            </div>
     </div>
 
     <script src="assets/script_logn.js"></script>
