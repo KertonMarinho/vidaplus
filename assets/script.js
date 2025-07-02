@@ -76,7 +76,8 @@ let validator = {
         }
 
         if (send) {
-            form.submit(); // Envia o formulário se tudo estiver válido
+            alert('Cadastro realizado com sucesso!');
+            window.location.href = "vidaplus_login.html";// Envia o formulário se tudo estiver válido
         }
     },
     checkInput: (input) => {

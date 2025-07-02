@@ -5,7 +5,7 @@ const passwordInput = document.querySelector('#password');
 const errorMessage = document.querySelector('#error-message');
 
 const userCorreto = ['paciente', 'medico', 'tecnico'];
-const senhaCorreta = '123';
+const senhaCorreta = '1234';
 
 // evento para o envio do formulário
 loginForm.addEventListener('submit', function(event) {
