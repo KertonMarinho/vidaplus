@@ -42,7 +42,7 @@ body {
 
 .container-seletores{
     display: flex; 
-    border: 1px solid #ccc; 
+     
 }
 
 .doctor-buttons {
@@ -141,7 +141,7 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 25px 35px; 
-    background-color: #bdcfc2e7;
+    background-color: rgba(85, 156, 160, 100);
     display: flex;
     flex-direction: column;
     gap: 25px; 
@@ -255,7 +255,7 @@ body {
 }
 
 .titulo-area {
-    color: #28a745;
+    color: #cdd6cf8c;
 }
 
 table {
@@ -300,7 +300,7 @@ td:hover {
 /* Seção Sala de Espera */
 .espera-circulo {
     align-items: center;
-    background-color: #007bff;
+    background-color: yellow;
     border: 2px solid #111111;
     border-radius: 50%;
     display: flex;
@@ -316,7 +316,7 @@ td:hover {
 }
 
 .sala-de-espera {
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc46;
     flex-basis: 45%;
     padding: 10px;
     text-align: center;
@@ -360,7 +360,7 @@ td:hover {
 .dashboard-container {
     width: 750px;
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc3b;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -368,7 +368,7 @@ td:hover {
 .main-content {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+  
 }
 .paciente-item {
     align-items: center;
@@ -387,7 +387,7 @@ td:hover {
 }
 
 .pacientes-recentes {
-    border: 1px solid #ccc;
+    border: 1px solid #201b1b;
     padding: 15px;
 }
 
